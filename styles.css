@@ -1,0 +1,210 @@
+@import "normalize.css";
+@import "isaac-font.css";
+@import "variables.css";
+@import "common.css";
+@import "wrappers.css";
+
+/* Variables */
+:root {
+	--color-back: #C7FFFF;
+	--color-front: #0000FE;
+	--color-front-alpha: #0000FE22;
+}
+
+html {
+	color: var(--color-front);
+	background: var(--color-back);
+}
+
+/**
+ * Barra superior común a todos os proxectos
+ */
+.page-header {
+	position: fixed;
+	background: rgba(0, 0, 0, 0.5);
+	color: rgba(255, 255, 255, 0.5);
+	top: 0;
+	left: 0;
+	width: 100%;
+	box-sizing: border-box;
+	padding-top: 0.5em;
+	padding-bottom: 0.5em;
+	font-size: 0.9rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+	z-index: 2;
+
+	& .page-logo {
+		display: flex;
+		color: inherit;
+		text-decoration: none;
+		outline: 0;
+
+		& strong {
+			font-weight: var(--fw-light);
+			display: block;
+			font-size: .8rem;
+			max-width: 10em;
+			line-height: 1;
+		}
+
+		& svg {
+			margin-right: 0.5em;
+		}
+
+		& path {
+			fill: rgba(255, 255, 255, 0.5);
+		}
+
+		&:hover {
+			color: white;
+
+			& path {
+				fill: white;
+			}
+		}
+	}
+
+	& .share {
+		display: none;
+
+		@media (min-width: 756px) {
+			display: block;
+		}
+	}
+}
+
+.page-header {
+	background: var(--color-back);
+
+	& .page-logo {
+		color: var(--color-front);
+
+		& path {
+			fill: var(--color-front);
+		}
+
+		&:hover {
+			color: black;
+
+			& path {
+				fill: black;
+			}
+		}
+	}
+}
+
+.project {
+	margin-top: 2rem;
+	margin-bottom: 3rem;
+	max-width: 30rem;
+	font-weight: var(--fw-light);
+
+	@media (min-width: 756px) {
+		background: url('./logo.svg') no-repeat left top;
+		padding-left: 300px;
+		min-height: 750px;
+	}
+
+	& header {
+		color: black;
+
+		& h1 {
+			font-size: 3em;
+			line-height: 1.1;
+			font-weight: var(--fw-bold);
+			margin: 0;
+
+			@media (min-width: 480px) {
+				font-size: 4em;
+			}
+		}
+
+		& p {
+			font-size: var(--fs-26);
+			margin: 0;
+		}
+	}
+
+	& h2 {
+		font-size: 1.2rem;
+	}
+
+	& ul {
+		list-style: none;
+		padding: 0;
+
+		& p {
+			margin: 0;
+			display: inline;
+		}
+
+		& li {
+			display: flex;
+		}
+		& time {
+			font-weight: var(--fw-bold);
+			flex: 0 0 auto;
+			margin-right: 1em;
+			width: 4em;
+		}
+	}
+
+	& a {
+		color: inherit;
+
+		&:hover {
+			color: black;
+			text-decoration: none;
+		}
+	}
+}
+
+.project-news-external {
+	margin-bottom: 2rem;
+
+	& ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		& > li {
+			padding: .5em 0;
+			border-top: solid 1px;
+		}
+	}
+	& h3 {
+		font-size: var(--fs-16);
+		font-weight: normal;
+		margin: 0;
+	}
+	& small {
+		display: block;
+		font-size: var(--fs-14);
+		margin: 0;
+		color: var(--color-medium);
+	}
+	& img {
+		float: left;
+		width: 16px;
+		height: 16px;
+		margin-top: 2px;
+	}
+	& a {
+		text-decoration: none;
+		color: var(--color-main);
+	}
+}
+
+.project-news-external {
+	& ul {
+		& > li {
+			border-color: var(--color-front-alpha);
+		}
+	}
+	& a:hover {
+		color: var(--color-front);
+	}
+}
