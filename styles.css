@@ -164,6 +164,7 @@ html {
 
 .project-news-external {
 	margin-bottom: 2rem;
+	max-width: 800px;
 
 	& ul {
 		list-style: none;
